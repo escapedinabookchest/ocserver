@@ -8,7 +8,7 @@ using ClientLogger.Logging.Media;
 namespace ClientLogger.Logging
 {
     /// <summary>
-    /// Writesl messages to the console.
+    /// Writes messages to the console.
     /// </summary>
     /// <remarks>
     /// Colors the output

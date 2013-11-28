@@ -6,11 +6,19 @@ using ClientLogger.Logging;
 
 namespace ClientLogger
 {
+    /// <summary>
+    /// Entry class of the application.
+    /// </summary>
     public class Program
     {
         private static Logger logger;
         private static ConsoleInputManager consoleInputManager;
 
+
+        /// <summary>
+        /// Entry point of the application.
+        /// </summary>
+        /// <param name="args">Optional console-startup arguments.</param>
         public static void Main(string[] args)
         {
             logger = new Logger();
