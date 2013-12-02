@@ -12,7 +12,6 @@ namespace ClientLogger
     public class Program
     {
         private static Logger logger;
-        private static ConsoleInputManager consoleInputManager;
 
 
         /// <summary>
@@ -31,7 +30,7 @@ namespace ClientLogger
             logger.Trace("This is a Trace message!");
             logger.Warning("This is a Warning message!");
 
-            consoleInputManager = new ConsoleInputManager();
+            ConsoleInputManager.Start();
         }
     }
 }

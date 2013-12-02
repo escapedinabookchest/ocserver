@@ -88,11 +88,11 @@ namespace ClientLogger.Input
     /// Delegate handler for incoming 'commit' events.
     /// </summary>
     /// <param name="commitEventArgs">Additional information for handling the event.</param>
-    public static delegate void OnCommitHandler(CommitEventArgs commitEventArgs);
+    public delegate void OnCommitHandler(CommitEventArgs commitEventArgs);
 
     /// <summary>
     /// Delegate handler for incoming 'update' events.
     /// </summary>
     /// <param name="updateEventArgs">Additional information for handling the event.</param>
-    public static delegate void OnUpdateHandler(UpdateEventArgs updateEventArgs);
+    public delegate void OnUpdateHandler(UpdateEventArgs updateEventArgs);
 }
