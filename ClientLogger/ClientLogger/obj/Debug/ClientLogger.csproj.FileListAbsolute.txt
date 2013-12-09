@@ -4,3 +4,9 @@ C:\Users\Dustin\Documents\GitHub\ocserver\ClientLogger\ClientLogger\bin\Debug\Cl
 C:\Users\Dustin\Documents\GitHub\ocserver\ClientLogger\ClientLogger\obj\Debug\ClientLogger.csprojResolveAssemblyReference.cache
 C:\Users\Dustin\Documents\GitHub\ocserver\ClientLogger\ClientLogger\obj\Debug\ClientLogger.exe
 C:\Users\Dustin\Documents\GitHub\ocserver\ClientLogger\ClientLogger\obj\Debug\ClientLogger.pdb
+C:\Users\Hersenspinsel\Documents\GitHub\ocserver\ClientLogger\ClientLogger\bin\Debug\ClientLogger.exe.config
+C:\Users\Hersenspinsel\Documents\GitHub\ocserver\ClientLogger\ClientLogger\obj\Debug\ClientLogger.exe
+C:\Users\Hersenspinsel\Documents\GitHub\ocserver\ClientLogger\ClientLogger\obj\Debug\ClientLogger.pdb
+C:\Users\Hersenspinsel\Documents\GitHub\ocserver\ClientLogger\ClientLogger\bin\Debug\ClientLogger.exe
+C:\Users\Hersenspinsel\Documents\GitHub\ocserver\ClientLogger\ClientLogger\bin\Debug\ClientLogger.pdb
+C:\Users\Hersenspinsel\Documents\GitHub\ocserver\ClientLogger\ClientLogger\obj\Debug\ClientLogger.csprojResolveAssemblyReference.cache

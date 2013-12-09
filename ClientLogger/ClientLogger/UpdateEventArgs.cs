@@ -1,4 +1,5 @@
-﻿namespace ClientLogger
+﻿using System;
+namespace ClientLogger
 {
     /// <summary>
     /// Additional information for handling incoming 'update' events.
@@ -10,7 +11,7 @@
         /// </summary>
         public UpdateEventArgs()
         {
-            //TODO: Add usefull code...
+            Console.WriteLine("Update...");
         }
 
 

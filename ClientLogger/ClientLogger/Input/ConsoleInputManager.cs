@@ -39,6 +39,8 @@ namespace ClientLogger.Input
         {
             while (true)
             {
+                var line = Console.ReadLine();
+                
                 var message = Console.ReadLine().ToString().ToLower();
                 switch (message)
                 {
