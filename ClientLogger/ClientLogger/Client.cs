@@ -3,60 +3,52 @@ using System.IO;
 using System.Net;
 using System.Net.Sockets;
 
+
 namespace ClientLogger
 {
     public class Client
     {
-        public static readonly int IP_ADDRESS = 2130706432; // 127.0.0.0
-        public static readonly int PORT = 50000;
+        public const int IP_ADDRESS = 2130706432; // 127.0.0.0
+        public const int PORT = 50000;
 
         private static Client client;
-        private TcpClient tcp;
-        private IPAddress ip;
-        private int port;
 
-        private BinaryWriter writer;
-        private BinaryReader reader;
+        private readonly TcpClient tcpClient;
+
+        private readonly BinaryWriter binaryWriter;
+        private readonly BinaryReader binaryReader;
+
 
         private Client() 
         {
-            tcp = new TcpClient();
-            writer = new BinaryWriter(tcp.GetStream());
-            reader = new BinaryReader(tcp.GetStream());
+            tcpClient = new TcpClient();
+            binaryWriter = new BinaryWriter(tcpClient.GetStream());
+            binaryReader = new BinaryReader(tcpClient.GetStream());
         }
 
         public static Client Instance
         {
             get 
             {
-                if (client == null)
-                {
-                    client = new Client();
-                    client.IP = new IPAddress(IP_ADDRESS);
-                    client.Port = PORT;
-                }
+                if (client != null) 
+                    return client;
+
+                client = new Client {IPAddress = new IPAddress(IP_ADDRESS), Port = PORT};
 
                 return client;
             }
         }
 
-        public IPAddress IP
-        {
-            get { return this.ip; }
-            private set { this.ip = value; }
-        }
+        public IPAddress IPAddress { get; private set; }
 
-        public int Port
-        {
-            get { return this.port; }
-            private set { port = value; }
-        }
+        public int Port { get; private set; }
+
 
         public void Connect()
         {
             try
             {
-                tcp.Connect(IP, Port);
+                tcpClient.Connect(IPAddress, Port);
             }
             catch (Exception ex)
             {
@@ -68,12 +60,13 @@ namespace ClientLogger
         {
             try
             {
-                if (tcp.Connected)
-                {
-                    writer.Close();
-                    reader.Close();
-                    tcp.Close();
-                }
+                if (!tcpClient.Connected) 
+                    return;
+
+                binaryWriter.Close();
+                binaryReader.Close();
+
+                tcpClient.Close();
             }
             catch (Exception ex)
             {
@@ -83,25 +76,25 @@ namespace ClientLogger
 
         public bool Send(string input)
         {
-            if (tcp.Connected)
-            {
-                writer.Write(input);
-                writer.Flush();
-                return true;
-            }
-            else
+            if (!tcpClient.Connected) 
                 return false;
+
+
+            binaryWriter.Write(input);
+            binaryWriter.Flush();
+
+            return true;
         }
 
         public string Receive()
         {
-            string output = "";
+            var output = "";
 
-            if (tcp.Connected)
-            {
-                output = reader.ReadString();
-                reader.Dispose();
-            }
+            if (!tcpClient.Connected) 
+                return output;
+
+            output = binaryReader.ReadString();
+            binaryReader.Dispose();
 
             return output;
         }

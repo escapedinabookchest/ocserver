@@ -42,15 +42,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Client.cs" />
-    <Compile Include="CommitEventArgs.cs" />
+    <Compile Include="Input\Events\QuitEventArgs.cs" />
+    <Compile Include="Input\Events\DeleteEventArgs.cs" />
+    <Compile Include="Input\Events\DirectoryEventArgs.cs" />
+    <Compile Include="Input\ConsoleCommands.cs" />
     <Compile Include="Input\ConsoleInputManager.cs" />
+    <Compile Include="Input\Events\GetEventArgs.cs" />
+    <Compile Include="Input\Events\PutEventArgs.cs" />
+    <Compile Include="Input\Events\RenameEventArgs.cs" />
+    <Compile Include="Input\Events\SynchronizeEventArgs.cs" />
     <Compile Include="Logging\ILogger.cs" />
     <Compile Include="Logging\Logger.cs" />
     <Compile Include="Logging\Media\MessageColor.cs" />
     <Compile Include="Logging\MessageType.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UpdateEventArgs.cs" />
+    <Compile Include="Input\Events\InfoEventArgs.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
