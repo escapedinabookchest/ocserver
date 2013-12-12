@@ -1,11 +1,17 @@
 ﻿namespace ClientLogger.Input
 {
-    public struct ConsoleCommands
+    /// <summary>
+    /// All supported commands by the console are stored here.
+    /// </summary>
+    /// <remarks>
+    /// These commands are used by the <see cref="ConsoleInputManager"/> class.
+    /// </remarks>
+    internal struct ConsoleCommands
     {
         /// <summary>
         /// Gives the name and current version of the server.
         /// </summary>
-        public const string INFO = "info";
+        internal const string INFO = "info";
         
         /// <summary>
         /// Gives a list of filenames in a specific directory.
@@ -13,32 +19,32 @@
         /// DIR C:\Test
         /// </example>
         /// </summary>
-        public const string DIRECTORY = "dir";
+        internal const string DIRECTORY = "dir";
 
         /// <summary>
         /// Gets a file from the server.
         /// </summary>
-        public const string GET = "get";
+        internal const string GET = "get";
 
         /// <summary>
         /// Sends a file to the server.
         /// </summary>
-        public const string PUT = "put";
+        internal const string PUT = "put";
 
         /// <summary>
         /// Removes a file from the server.
         /// </summary>
-        public const string DELETE = "del";
+        internal const string DELETE = "del";
 
         /// <summary>
         /// Renames a file on the server.
         /// </summary>
-        public const string RENAME = "ren";
+        internal const string RENAME = "ren";
 
         /// <summary>
         /// Closes the connection with the server.
         /// </summary>
-        public const string QUIT = "quit";
+        internal const string QUIT = "quit";
 
         /// <summary>
         /// Merges two folders.
@@ -46,6 +52,6 @@
         /// SYNC 'local directory' 'remote directory'
         /// </example>
         /// </summary>
-        public const string SYNCHRONIZE = "sync";
+        internal const string SYNCHRONIZE = "sync";
     }
 }

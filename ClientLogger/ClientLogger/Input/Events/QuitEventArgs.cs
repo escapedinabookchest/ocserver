@@ -13,7 +13,7 @@ namespace ClientLogger.Input.Events
         /// </summary>
         public QuitEventArgs()
         {
-            Console.WriteLine("Quit command!");
+            Console.WriteLine("Quit command triggered!");
         }
 
 

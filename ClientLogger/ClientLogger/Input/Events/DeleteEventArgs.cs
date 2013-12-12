@@ -13,7 +13,7 @@ namespace ClientLogger.Input.Events
         /// </summary>
         public DeleteEventArgs()
         {
-            Console.WriteLine("Delete command!");
+            Console.WriteLine("Delete command triggered!");
         }
 
 

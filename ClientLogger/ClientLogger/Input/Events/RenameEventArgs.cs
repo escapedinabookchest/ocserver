@@ -13,7 +13,7 @@ namespace ClientLogger.Input.Events
         /// </summary>
         public RenameEventArgs()
         {
-            Console.WriteLine("Rename command!");
+            Console.WriteLine("Rename command triggered!");
         }
 
 

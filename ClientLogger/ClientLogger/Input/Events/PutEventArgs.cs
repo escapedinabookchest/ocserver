@@ -13,7 +13,7 @@ namespace ClientLogger.Input.Events
         /// </summary>
         public PutEventArgs()
         {
-            Console.WriteLine("Put command!");
+            Console.WriteLine("Put command triggered!");
         }
 
 

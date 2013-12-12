@@ -3,6 +3,8 @@ using System.IO;
 using System.Net;
 using System.Net.Sockets;
 
+using ClientLogger.Logging;
+
 
 namespace ClientLogger
 {
@@ -13,17 +15,17 @@ namespace ClientLogger
 
         private static Client client;
 
+        private BinaryWriter binaryWriter;
+        private BinaryReader binaryReader;
+
+        private readonly Logger logger;
         private readonly TcpClient tcpClient;
 
-        private readonly BinaryWriter binaryWriter;
-        private readonly BinaryReader binaryReader;
 
-
-        private Client() 
+        private Client()
         {
+            logger = new Logger();
             tcpClient = new TcpClient();
-            binaryWriter = new BinaryWriter(tcpClient.GetStream());
-            binaryReader = new BinaryReader(tcpClient.GetStream());
         }
 
         public static Client Instance
@@ -33,7 +35,11 @@ namespace ClientLogger
                 if (client != null) 
                     return client;
 
-                client = new Client {IPAddress = new IPAddress(IP_ADDRESS), Port = PORT};
+                client = new Client
+                {
+                    IPAddress = new IPAddress(IP_ADDRESS), 
+                    Port = PORT
+                };
 
                 return client;
             }
@@ -49,10 +55,13 @@ namespace ClientLogger
             try
             {
                 tcpClient.Connect(IPAddress, Port);
+
+                binaryWriter = new BinaryWriter(tcpClient.GetStream());
+                binaryReader = new BinaryReader(tcpClient.GetStream());
             }
-            catch (Exception ex)
+            catch (Exception exception)
             {
-                Console.WriteLine(ex.ToString());
+                logger.Error(exception.ToString());
             }
         }
 
@@ -68,9 +77,9 @@ namespace ClientLogger
 
                 tcpClient.Close();
             }
-            catch (Exception ex)
+            catch (Exception exception)
             {
-                Console.WriteLine(ex.ToString());
+                logger.Error(exception.ToString());
             }
         }
 
@@ -78,7 +87,6 @@ namespace ClientLogger
         {
             if (!tcpClient.Connected) 
                 return false;
-
 
             binaryWriter.Write(input);
             binaryWriter.Flush();

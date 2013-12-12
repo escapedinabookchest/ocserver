@@ -13,7 +13,7 @@ namespace ClientLogger.Input.Events
         /// </summary>
         public InfoEventArgs()
         {
-            Console.WriteLine("Information command!");
+            Console.WriteLine("Information command triggered!");
         }
 
 

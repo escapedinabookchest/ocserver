@@ -13,7 +13,7 @@ namespace ClientLogger.Input.Events
         /// </summary>
         public DirectoryEventArgs()
         {
-            Console.WriteLine("Directory command!");
+            Console.WriteLine("Directory command triggered!");
         }
 
 

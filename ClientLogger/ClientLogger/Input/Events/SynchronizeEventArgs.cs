@@ -13,7 +13,7 @@ namespace ClientLogger.Input.Events
         /// </summary>
         public SynchronizeEventArgs()
         {
-            Console.WriteLine("Synchronize command!");
+            Console.WriteLine("Synchronize command triggered!");
         }
 
 

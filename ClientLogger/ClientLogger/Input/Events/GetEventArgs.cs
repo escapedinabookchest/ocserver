@@ -13,7 +13,7 @@ namespace ClientLogger.Input.Events
         /// </summary>
         public GetEventArgs()
         {
-            Console.WriteLine("Get command!");
+            Console.WriteLine("Get command triggered!");
         }
 
 
