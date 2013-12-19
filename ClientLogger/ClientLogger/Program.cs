@@ -1,4 +1,4 @@
-﻿using ClientLogger.Logging;
+﻿//using ClientLogger.Logging;
 
 
 namespace ClientLogger
@@ -9,7 +9,8 @@ namespace ClientLogger
     public class Program
     {
         private static Client client;
-        private static Logger logger;
+        //private static Logger logger;
+
         private static ConsoleInputHandler consoleInputHandler;
 
 
@@ -19,12 +20,14 @@ namespace ClientLogger
         /// <param name="args">Optional console-startup arguments.</param>
         public static void Main(string[] args)
         {
-            logger = new Logger();
-            client = Client.Instance;
-            
+            //logger = new Logger();
             consoleInputHandler = new ConsoleInputHandler();
 
+            client = Client.Instance;
             client.Connect();
+
+            client.Send(@"Hello from C# client!");
+
 
             #region Logger Testcode
 

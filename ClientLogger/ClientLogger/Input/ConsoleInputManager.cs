@@ -43,49 +43,47 @@ namespace ClientLogger.Input
                 if (line == null)
                     continue;
 
-                //TODO: Implement usefull data in the event arguments.
-
                 var message = line.ToLower();
                 switch (message)
                 {
                     #region Supported Commands
 
-                    case ConsoleCommands.INFO:
+                    case ConsoleCommand.INFO:
                         if (OnInformation != null)
                             OnInformation(InfoEventArgs.Empty);
                         break;
 
-                    case ConsoleCommands.DIRECTORY:
+                    case ConsoleCommand.DIRECTORY:
                         if (OnDirectory != null)
                             OnDirectory(DirectoryEventArgs.Empty);
                         break;
 
-                    case ConsoleCommands.GET:
+                    case ConsoleCommand.GET:
                         if (OnGet != null)
                             OnGet(GetEventArgs.Empty);
                         break;
 
-                    case ConsoleCommands.PUT:
+                    case ConsoleCommand.PUT:
                         if (OnPut != null)
                             OnPut(PutEventArgs.Empty);
                         break;
 
-                    case ConsoleCommands.DELETE:
+                    case ConsoleCommand.DELETE:
                         if (OnDelete != null)
                             OnDelete(DeleteEventArgs.Empty);
                         break;
 
-                    case ConsoleCommands.RENAME:
+                    case ConsoleCommand.RENAME:
                         if (OnRename != null)
                             OnRename(RenameEventArgs.Empty);
                         break;
 
-                    case ConsoleCommands.QUIT:
+                    case ConsoleCommand.QUIT:
                         if (OnQuit != null)
                             OnQuit(QuitEventArgs.Empty);
                         break;
 
-                    case ConsoleCommands.SYNCHRONIZE:
+                    case ConsoleCommand.SYNCHRONIZE:
                         if (OnSynchronize != null)
                             OnSynchronize(SynchronizeEventArgs.Empty);
                         break;
@@ -125,42 +123,42 @@ namespace ClientLogger.Input
         #region Command Events
 
         /// <summary>
-        /// Event handler to handle incoming <see cref="ConsoleCommands.INFO"/> commands.
+        /// Event handler to handle incoming <see cref="ConsoleCommand.INFO"/> commands.
         /// </summary>
         internal static event OnInformationEventHandler OnInformation;
         
         /// <summary>
-        /// Event handler to handle incoming <see cref="ConsoleCommands.DIRECTORY"/> commands.
+        /// Event handler to handle incoming <see cref="ConsoleCommand.DIRECTORY"/> commands.
         /// </summary>
         internal static event OnDirectoryEventHandler OnDirectory;
         
         /// <summary>
-        /// Event handler to handle incoming <see cref="ConsoleCommands.GET"/> commands.
+        /// Event handler to handle incoming <see cref="ConsoleCommand.GET"/> commands.
         /// </summary>
         internal static event OnGetEventHandler OnGet;
         
         /// <summary>
-        /// Event handler to handle incoming <see cref="ConsoleCommands.PUT"/> commands.
+        /// Event handler to handle incoming <see cref="ConsoleCommand.PUT"/> commands.
         /// </summary>
         internal static event OnPutEventHandler OnPut;
         
         /// <summary>
-        /// Event handler to handle incoming <see cref="ConsoleCommands.DELETE"/> commands.
+        /// Event handler to handle incoming <see cref="ConsoleCommand.DELETE"/> commands.
         /// </summary>
         internal static event OnDeleteEventHandler OnDelete;
         
         /// <summary>
-        /// Event handler to handle incoming <see cref="ConsoleCommands.RENAME"/> commands.
+        /// Event handler to handle incoming <see cref="ConsoleCommand.RENAME"/> commands.
         /// </summary>
         internal static event OnRenameEventHandler OnRename;
         
         /// <summary>
-        /// Event handler to handle incoming <see cref="ConsoleCommands.QUIT"/> commands.
+        /// Event handler to handle incoming <see cref="ConsoleCommand.QUIT"/> commands.
         /// </summary>
         internal static event OnQuitEventHandler OnQuit;
         
         /// <summary>
-        /// Event handler to handle incoming <see cref="ConsoleCommands.SYNCHRONIZE"/> commands.
+        /// Event handler to handle incoming <see cref="ConsoleCommand.SYNCHRONIZE"/> commands.
         /// </summary>
         internal static event OnSynchronizeEventHandler OnSynchronize;
 
@@ -171,49 +169,49 @@ namespace ClientLogger.Input
     #region Command Event Handlers
 
     /// <summary>
-    /// Event handler to handle incoming <see cref="ConsoleCommands.INFO"/> commands.
+    /// Event handler to handle incoming <see cref="ConsoleCommand.INFO"/> commands.
     /// </summary>
     /// <param name="infoEventArgs">Event arguments containing data to handle the event.</param>
     internal delegate void OnInformationEventHandler(InfoEventArgs infoEventArgs);
     
     /// <summary>
-    /// Event handler to handle incoming <see cref="ConsoleCommands.DIRECTORY"/> commands.
+    /// Event handler to handle incoming <see cref="ConsoleCommand.DIRECTORY"/> commands.
     /// </summary>
     /// <param name="directoryEventArgs">Event arguments containing data to handle the event.</param>
     internal delegate void OnDirectoryEventHandler(DirectoryEventArgs directoryEventArgs);
     
     /// <summary>
-    /// Event handler to handle incoming <see cref="ConsoleCommands.GET"/> commands.
+    /// Event handler to handle incoming <see cref="ConsoleCommand.GET"/> commands.
     /// </summary>
     /// <param name="getEventArgs">Event arguments containing data to handle the event.</param>
     internal delegate void OnGetEventHandler(GetEventArgs getEventArgs);
     
     /// <summary>
-    /// Event handler to handle incoming <see cref="ConsoleCommands.PUT"/> commands.
+    /// Event handler to handle incoming <see cref="ConsoleCommand.PUT"/> commands.
     /// </summary>
     /// <param name="putEventArgs">Event arguments containing data to handle the event.</param>
     internal delegate void OnPutEventHandler(PutEventArgs putEventArgs);
     
     /// <summary>
-    /// Event handler to handle incoming <see cref="ConsoleCommands.DELETE"/> commands.
+    /// Event handler to handle incoming <see cref="ConsoleCommand.DELETE"/> commands.
     /// </summary>
     /// <param name="deleteEventArgs">Event arguments containing data to handle the event.</param>
     internal delegate void OnDeleteEventHandler(DeleteEventArgs deleteEventArgs);
     
     /// <summary>
-    /// Event handler to handle incoming <see cref="ConsoleCommands.RENAME"/> commands.
+    /// Event handler to handle incoming <see cref="ConsoleCommand.RENAME"/> commands.
     /// </summary>
     /// <param name="renameEventArgs">Event arguments containing data to handle the event.</param>
     internal delegate void OnRenameEventHandler(RenameEventArgs renameEventArgs);
     
     /// <summary>
-    /// Event handler to handle incoming <see cref="ConsoleCommands.QUIT"/> commands.
+    /// Event handler to handle incoming <see cref="ConsoleCommand.QUIT"/> commands.
     /// </summary>
     /// <param name="quitEventArgs">Event arguments containing data to handle the event.</param>
     internal delegate void OnQuitEventHandler(QuitEventArgs quitEventArgs);
     
     /// <summary>
-    /// Event handler to handle incoming <see cref="ConsoleCommands.SYNCHRONIZE"/> commands.
+    /// Event handler to handle incoming <see cref="ConsoleCommand.SYNCHRONIZE"/> commands.
     /// </summary>
     /// <param name="synchrozinEventArgs">Event arguments containing data to handle the event.</param>
     internal delegate void OnSynchronizeEventHandler(SynchronizeEventArgs synchrozinEventArgs);

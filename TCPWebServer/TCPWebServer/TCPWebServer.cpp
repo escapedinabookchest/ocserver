@@ -12,7 +12,7 @@ using namespace std;
 
 
 static const int MAX_PATH_LENGTH = 256;
-static const int TCP_PORT = 1080;
+static const int TCP_PORT = 8080;
 
 
 void handle(Socket *socket)
@@ -21,11 +21,9 @@ void handle(Socket *socket)
 
 	cout << "Socket successfully connected!\r\n";
 
-	socket->write("Hello\r\n");
 	if (socket->readline(line, MAX_PATH_LENGTH))
 	{
 		cout << "Get request: " << line << "\r\n";
-		socket->write("BYE!\r\n");
 	}
 
 	delete socket;

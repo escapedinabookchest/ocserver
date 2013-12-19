@@ -30,49 +30,49 @@ namespace ClientLogger
         #region Event Handler Implementations
 
         /// <summary>
-        /// Event handler to handle incoming <see cref="ConsoleCommands.DELETE"/> commands.
+        /// Event handler to handle incoming <see cref="ConsoleCommand.DELETE"/> commands.
         /// </summary>
         /// <param name="deleteEventArgs">Event arguments containing data to handle the event.</param>
         protected void OnDelete(DeleteEventArgs deleteEventArgs) { }
 
         /// <summary>
-        /// Event handler to handle incoming <see cref="ConsoleCommands.DIRECTORY"/> commands.
+        /// Event handler to handle incoming <see cref="ConsoleCommand.DIRECTORY"/> commands.
         /// </summary>
         /// <param name="directoryEventArgs">Event arguments containing data to handle the event.</param>
         protected void OnDirectory(DirectoryEventArgs directoryEventArgs) { }
 
         /// <summary>
-        /// Event handler to handle incoming <see cref="ConsoleCommands.GET"/> commands.
+        /// Event handler to handle incoming <see cref="ConsoleCommand.GET"/> commands.
         /// </summary>
         /// <param name="getEventArgs">Event arguments containing data to handle the event.</param>
         protected void OnGet(GetEventArgs getEventArgs) { }
 
         /// <summary>
-        /// Event handler to handle incoming <see cref="ConsoleCommands.INFO"/> commands.
+        /// Event handler to handle incoming <see cref="ConsoleCommand.INFO"/> commands.
         /// </summary>
         /// <param name="infoEventArgs">Event arguments containing data to handle the event.</param>
         protected void OnInformation(InfoEventArgs infoEventArgs) { }
 
         /// <summary>
-        /// Event handler to handle incoming <see cref="ConsoleCommands.PUT"/> commands.
+        /// Event handler to handle incoming <see cref="ConsoleCommand.PUT"/> commands.
         /// </summary>
         /// <param name="putEventArgs">Event arguments containing data to handle the event.</param>
         protected void OnPut(PutEventArgs putEventArgs) { }
 
         /// <summary>
-        /// Event handler to handle incoming <see cref="ConsoleCommands.QUIT"/> commands.
+        /// Event handler to handle incoming <see cref="ConsoleCommand.QUIT"/> commands.
         /// </summary>
         /// <param name="quitEventArgs">Event arguments containing data to handle the event.</param>
         protected void OnQuit(QuitEventArgs quitEventArgs) { }
 
         /// <summary>
-        /// Event handler to handle incoming <see cref="ConsoleCommands.RENAME"/> commands.
+        /// Event handler to handle incoming <see cref="ConsoleCommand.RENAME"/> commands.
         /// </summary>
         /// <param name="renameEventArgs">Event arguments containing data to handle the event.</param>
         protected void OnRename(RenameEventArgs renameEventArgs) { }
 
         /// <summary>
-        /// Event handler to handle incoming <see cref="ConsoleCommands.SYNCHRONIZE"/> commands.
+        /// Event handler to handle incoming <see cref="ConsoleCommand.SYNCHRONIZE"/> commands.
         /// </summary>
         /// <param name="synchronizeEventArgs">Event arguments containing data to handle the event.</param>
         protected void OnSynchronize(SynchronizeEventArgs synchronizeEventArgs) { }

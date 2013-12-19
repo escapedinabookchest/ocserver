@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "socket.h"
 
 #pragma comment(lib, "wsock32.lib")

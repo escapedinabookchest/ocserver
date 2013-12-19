@@ -42,11 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Client.cs" />
+    <Compile Include="ClientMessageManager.cs" />
     <Compile Include="ConsoleInputHandler.cs" />
     <Compile Include="Input\Events\QuitEventArgs.cs" />
     <Compile Include="Input\Events\DeleteEventArgs.cs" />
     <Compile Include="Input\Events\DirectoryEventArgs.cs" />
-    <Compile Include="Input\ConsoleCommands.cs" />
+    <Compile Include="Input\ConsoleCommand.cs" />
     <Compile Include="Input\ConsoleInputManager.cs" />
     <Compile Include="Input\Events\GetEventArgs.cs" />
     <Compile Include="Input\Events\PutEventArgs.cs" />

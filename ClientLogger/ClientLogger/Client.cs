@@ -10,8 +10,8 @@ namespace ClientLogger
 {
     public class Client
     {
-        public const int IP_ADDRESS = 2130706432; // 127.0.0.0
-        public const int PORT = 50000;
+        public const string HOSTNAME = "localhost"; // 127.0.0.1
+        public const int PORT = 8080;
 
         private static Client client;
 
@@ -37,7 +37,7 @@ namespace ClientLogger
 
                 client = new Client
                 {
-                    IPAddress = new IPAddress(IP_ADDRESS), 
+                    Hostname = HOSTNAME,
                     Port = PORT
                 };
 
@@ -45,7 +45,7 @@ namespace ClientLogger
             }
         }
 
-        public IPAddress IPAddress { get; private set; }
+        public string Hostname { get; private set; }
 
         public int Port { get; private set; }
 
@@ -54,7 +54,7 @@ namespace ClientLogger
         {
             try
             {
-                tcpClient.Connect(IPAddress, Port);
+                tcpClient.Connect(Hostname, Port);
 
                 binaryWriter = new BinaryWriter(tcpClient.GetStream());
                 binaryReader = new BinaryReader(tcpClient.GetStream());

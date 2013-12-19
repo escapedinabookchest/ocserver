@@ -51,17 +51,17 @@ namespace ClientLogger.Logging
         {
             switch (messageType)
             {
-                case MessageType.DEBUG:
+                case MessageType.Debug:
                     return MessageColor.DEBUG;
-                case MessageType.ERROR:
+                case MessageType.Error:
                     return MessageColor.ERROR;
-                case MessageType.FATAL:
+                case MessageType.Fatal:
                     return MessageColor.FATAL;
-                case MessageType.INFO:
+                case MessageType.Info:
                     return MessageColor.INFO;
-                case MessageType.TRACE:
+                case MessageType.Trace:
                     return MessageColor.TRACE;
-                case MessageType.WARNING:
+                case MessageType.Warning:
                     return MessageColor.WARNING;
             }
 
@@ -74,7 +74,7 @@ namespace ClientLogger.Logging
             lock (lockObject)
             {
                 var array = (state as object[]);
-                var level = ((array[0] != null) ? (MessageType)array[0] : MessageType.INFO);
+                var level = ((array[0] != null) ? (MessageType)array[0] : MessageType.Info);
                 var message = array[1].ToString();
                 var exception = (array[2] as Exception);
                 var stringBuilder = new StringBuilder();
@@ -102,7 +102,7 @@ namespace ClientLogger.Logging
             lock (lockObject)
             {
                 var array = (state as object[]);
-                var level = ((array[0] != null) ? (MessageType)array[0] : MessageType.INFO);
+                var level = ((array[0] != null) ? (MessageType)array[0] : MessageType.Info);
                 var message = array[1].ToString();
                 var stringBuilder = new StringBuilder();
 
@@ -143,8 +143,10 @@ namespace ClientLogger.Logging
         /// <param name="exception">The exception occured with the message to log.</param>
         public void Write(MessageType messageType, string message, Exception exception)
         {
-            var thread = new Thread(() => Write(new Object[] { messageType, message }));
-            thread.Name = ("_logEx_" + messageType.ToString());
+            var thread = new Thread(() => Write(new Object[] { messageType, message }))
+            {
+                Name = ("_logEx_" + messageType.ToString())
+            };
             thread.Start();
         }
 
@@ -157,7 +159,7 @@ namespace ClientLogger.Logging
         /// <param name="message">The text of the message to log.</param>
         public void Debug(string message)
         {
-            Write(MessageType.DEBUG, message);
+            Write(MessageType.Debug, message);
         }
 
         /// <summary>
@@ -167,7 +169,7 @@ namespace ClientLogger.Logging
         /// <param name="exception">The exception occured with the message to log.</param>
         public void Debug(string message, Exception exception)
         {
-            Write(MessageType.DEBUG, message, exception);
+            Write(MessageType.Debug, message, exception);
         }
 
         /// <summary>
@@ -176,7 +178,7 @@ namespace ClientLogger.Logging
         /// <param name="message">The text of the message to log.</param>
         public void Default(string message)
         {
-            Write(MessageType.DEFAULT, message);
+            Write(MessageType.Default, message);
         }
 
         /// <summary>
@@ -186,7 +188,7 @@ namespace ClientLogger.Logging
         /// <param name="exception">The exception occured with the message to log.</param>
         public void Default(string message, Exception exception)
         {
-            Write(MessageType.DEFAULT, message, exception);
+            Write(MessageType.Default, message, exception);
         }
 
         /// <summary>
@@ -195,7 +197,7 @@ namespace ClientLogger.Logging
         /// <param name="message">The text of the message to log.</param>
         public void Error(string message)
         {
-            Write(MessageType.ERROR, message);
+            Write(MessageType.Error, message);
         }
 
         /// <summary>
@@ -205,7 +207,7 @@ namespace ClientLogger.Logging
         /// <param name="exception">The exception occured with the message to log.</param>
         public void Error(string message, Exception exception)
         {
-            Write(MessageType.ERROR, message, exception);
+            Write(MessageType.Error, message, exception);
         }
 
         /// <summary>
@@ -214,7 +216,7 @@ namespace ClientLogger.Logging
         /// <param name="message">The text of the message to log.</param>
         public void Fatal(string message)
         {
-            Write(MessageType.FATAL, message);
+            Write(MessageType.Fatal, message);
         }
 
         /// <summary>
@@ -224,7 +226,7 @@ namespace ClientLogger.Logging
         /// <param name="exception">The exception occured with the message to log.</param>
         public void Fatal(string message, Exception exception)
         {
-            Write(MessageType.FATAL, message, exception);
+            Write(MessageType.Fatal, message, exception);
         }
 
         /// <summary>
@@ -233,7 +235,7 @@ namespace ClientLogger.Logging
         /// <param name="message">The text of the message to log.</param>
         public void Info(string message)
         {
-            Write(MessageType.INFO, message);
+            Write(MessageType.Info, message);
         }
 
         /// <summary>
@@ -243,7 +245,7 @@ namespace ClientLogger.Logging
         /// <param name="exception">The exception occured with the message to log.</param>
         public void Info(string message, Exception exception)
         {
-            Write(MessageType.INFO, message, exception);
+            Write(MessageType.Info, message, exception);
         }
 
         /// <summary>
@@ -252,7 +254,7 @@ namespace ClientLogger.Logging
         /// <param name="message">The text of the message to log.</param>
         public void Trace(string message)
         {
-            Write(MessageType.TRACE, message);
+            Write(MessageType.Trace, message);
         }
 
         /// <summary>
@@ -262,7 +264,7 @@ namespace ClientLogger.Logging
         /// <param name="exception">The exception occured with the message to log.</param>
         public void Trace(string message, Exception exception)
         {
-            Write(MessageType.TRACE, message, exception);
+            Write(MessageType.Trace, message, exception);
         }
 
         /// <summary>
@@ -271,7 +273,7 @@ namespace ClientLogger.Logging
         /// <param name="message">The text of the message to log.</param>
         public void Warning(string message)
         {
-            Write(MessageType.WARNING, message);
+            Write(MessageType.Warning, message);
         }
 
         /// <summary>
@@ -281,7 +283,7 @@ namespace ClientLogger.Logging
         /// <param name="exception">The exception occured with the message to log.</param>
         public void Warning(string message, Exception exception)
         {
-            Write(MessageType.WARNING, message, exception);
+            Write(MessageType.Warning, message, exception);
         }
 
         #endregion
